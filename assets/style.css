@@ -1,0 +1,121 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: linear-gradient(135deg, #1e1b4b, #312e81 50%, #4c1d95);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #1f2937;
+}
+
+.container { width: 100%; max-width: 440px; }
+
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 36px 32px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+.card-wide { max-width: 640px; margin: 0 auto; }
+.container:has(.card-wide) { max-width: 640px; }
+
+h1 { font-size: 1.7rem; margin-bottom: 6px; color: #1e1b4b; }
+.subtitle { color: #6b7280; margin-bottom: 22px; font-size: 0.95rem; }
+
+label { display: block; font-weight: 600; font-size: 0.88rem; margin: 14px 0 6px; }
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+label.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+    margin-top: 14px;
+    cursor: pointer;
+}
+
+button, .btn-logout {
+    display: inline-block;
+    width: 100%;
+    margin-top: 22px;
+    padding: 13px;
+    background: #6366f1;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.1s;
+}
+button:hover { background: #4f46e5; }
+button:active { transform: scale(0.98); }
+
+.switch { text-align: center; margin-top: 20px; font-size: 0.9rem; color: #6b7280; }
+.switch a { color: #6366f1; font-weight: 600; text-decoration: none; }
+.switch a:hover { text-decoration: underline; }
+
+/* Pesan error & sukses */
+.alert {
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    font-size: 0.9rem;
+}
+.alert ul { padding-left: 18px; }
+.alert-error   { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+.alert-success { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+
+/* Dashboard */
+.dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.btn-logout {
+    width: auto;
+    margin-top: 0;
+    padding: 10px 20px;
+    background: #ef4444;
+}
+.btn-logout:hover { background: #dc2626; }
+
+.info-grid { display: grid; gap: 14px; }
+.info-item {
+    background: #f5f3ff;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.info-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; }
+.info-value { font-size: 1.05rem; font-weight: 600; color: #1e1b4b; }
+
+@media (max-width: 480px) {
+    .card { padding: 28px 22px; }
+    .dash-header { flex-direction: column; }
+    .btn-logout { width: 100%; }
+}
